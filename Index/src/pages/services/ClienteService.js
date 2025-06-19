@@ -6,9 +6,18 @@ const getAllClientes = () => {
 };
 
 
+const deleteClientes = (id) => {
+    return http.mainInstance.delete(`${API_URL}/cliente/${id}`);
+};
+
+const updateCliente = (id, data) => {
+    return http.mainInstance.put(`${API_URL}/cliente/${id}`, data);
+};
 
 const ClienteService = {
     getAllClientes,
+    deleteClientes,
+    updateCliente,
 }
 
 export default ClienteService;
