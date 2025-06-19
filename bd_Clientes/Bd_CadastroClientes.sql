@@ -17,7 +17,7 @@ USE Bd_CadastroClientes;
 GO
 
 -- Cria a tabela Cliente
-CREATE TABLE Cliente (
+CREATE TABLE Cliente(
     id INT IDENTITY PRIMARY KEY,    -- Define a coluna id como PRIMARY KEY e auto-incrementa
     nome NVARCHAR(100) NOT NULL,                -- Nome do cliente
     email NVARCHAR(255) UNIQUE NOT NULL,        -- Email do cliente, deve ser único
@@ -28,7 +28,7 @@ CREATE TABLE Cliente (
 GO
 
 
-CREATE TABLE DoarLivro(
+CREATE TABLE Doacao(
     id INT IDENTITY PRIMARY KEY,
     nome NVARCHAR(100) NOT NULL,  
 	titulo NVARCHAR (100) NOT NULL,
@@ -45,8 +45,12 @@ INSERT INTO Cliente (nome, email, senha, cep, telefone)
 VALUES ('Felipe Souza Santana', 'felipebebesuco@gmail.com', 'pitango123', '88888888', '11 987790585');
 GO
 
-INSERT INTO DoarLivro (nome, titulo, genero, autor, descricao)
+INSERT INTO Doacao (nome, titulo, genero, autor, descricao)
 VALUES ('Harry Potter', 'Harry Potter: A Pedra Filosofal', 'Fantasia', 'J.K Rowlling', 'embarque no mundo de Harry Potter');
+GO
+
+INSERT INTO Doacao (nome, titulo, genero, autor, descricao)
+VALUES ('Pokemon', 'Pokemon: Silves and black', 'anime', 'Toyotaro', 'Ash e Seus Pokemons');
 GO
 
 INSERT INTO Cliente (nome, email, senha, cep, telefone)
@@ -55,5 +59,5 @@ GO
 
 -- Consulta todos os registros da tabela Cliente
 SELECT * FROM Cliente;
-SELECT *FROM DoarLivro
+SELECT *FROM Doacao
 GO
